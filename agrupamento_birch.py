@@ -5,7 +5,7 @@ from numpy import random
 
 # Geração de dados sintéticos para agrupamento
 random.seed(1)  # Define a semente para reprodutibilidade
-x, _ = make_blobs(n_samples=50, centers=5, cluster_std=1.2)  # Cria 50 pontos com 5 centros
+x, _ = make_blobs(n_samples=400, centers=5, cluster_std=1.2)  # Cria 50 pontos com 5 centros
 
 # Visualização dos dados gerados
 plt.scatter(x[:, 0], x[:, 1])  # Plota os pontos no plano 2D
@@ -15,7 +15,7 @@ plt.ylabel("Coordenada Y")  # Rótulo do eixo Y
 plt.show()  # Exibe o gráfico
 
 # Configuração e ajuste do modelo BIRCH
-bclust = Birch(branching_factor=25, threshold=1)  # Cria o modelo BIRCH
+bclust = Birch(branching_factor=200, threshold=1)  # Cria o modelo BIRCH
 bclust.fit(x)  # Ajusta o modelo aos dados
 
 # Exibe os parâmetros do modelo ajustado
